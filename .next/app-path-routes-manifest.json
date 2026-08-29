@@ -1,0 +1,15 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/admin/[module]/page": "/admin/[module]",
+  "/admin/dashboard/page": "/admin/dashboard",
+  "/arsip/page": "/arsip",
+  "/berita/page": "/berita",
+  "/d-das/page": "/d-das",
+  "/kajian/page": "/kajian",
+  "/login/page": "/login",
+  "/monitoring/page": "/monitoring",
+  "/ormawa/page": "/ormawa",
+  "/page": "/",
+  "/tentang/page": "/tentang"
+}

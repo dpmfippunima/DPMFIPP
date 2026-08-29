@@ -1,0 +1,20 @@
+{
+  "node": {
+    "40e2268772fb2e5852a02d1d76eccf5ea3be4f4b53": {
+      "workers": {
+        "app/login/page": {
+          "moduleId": 70646,
+          "async": false,
+          "exportedName": "signIn",
+          "filename": "Desktop/DPM WEB/app/login/actions.ts"
+        }
+      },
+      "layer": {
+        "app/login/page": "rsc"
+      },
+      "exportedName": "signIn",
+      "filename": "Desktop/DPM WEB/app/login/actions.ts"
+    }
+  },
+  "edge": {}
+}
