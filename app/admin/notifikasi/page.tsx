@@ -73,7 +73,20 @@ export default async function NotificationsPage() {
 
 
   <div className="sectionHeadActions">
-    <MarkAllReadButton />
+    <MarkAllReadButton action={async () => {
+      "use server";
+      const supabase = await createSupabaseServerClient();
+      const { count, error } = await supabase
+        .from("admin_notifications")
+        .update({ is_read: true })
+        .eq("is_read", false);
+
+      if (error) {
+        return { success: false, error: error.message };
+      }
+
+      return { success: true, updatedCount: count || 0 };
+    }} />
   </div>
 
 </div>
