@@ -164,6 +164,8 @@ export default async function AdminLayout({
     );
   }
 
+  const unreadCount = unreadNotificationsCount ?? 0;
+
   /* =======================================================
      RENDER
   ======================================================= */
@@ -244,23 +246,22 @@ export default async function AdminLayout({
             {/* NOTIFICATION */}
 
             <Link
-              href="/admin/notifikasi"
-              className="notificationBell"
-              aria-label="Notifikasi"
-            >
-              <span className="notificationBellIcon">
-                🔔
-              </span>
+  href="/admin/notifikasi"
+  className="notificationBell"
+  aria-label="Notifikasi"
+>
+  <span className="notificationBellIcon">
+    🔔
+  </span>
 
-              {(unreadNotificationsCount ?? 0) > 0 && (
-                <span className="notificationBadge">
-                  {unreadNotificationsCount > 99
-                    ? "99+"
-                    : unreadNotificationsCount}
-                </span>
-              )}
-
-            </Link>
+  {unreadCount > 0 && (
+    <span className="notificationBadge">
+      {unreadCount > 99
+        ? "99+"
+        : unreadCount}
+    </span>
+  )}
+</Link>
 
             {/* MOBILE MENU */}
 
