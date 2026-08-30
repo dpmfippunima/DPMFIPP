@@ -153,7 +153,8 @@ h3 {
   font-weight: 700;
 }
 
-.form input {
+.form input,
+.form textarea {
   width: 100%;
 
   padding: 14px 16px;
@@ -166,7 +167,8 @@ h3 {
   font: inherit;
 }
 
-.form input:focus {
+.form input:focus,
+.form textarea:focus  {
   outline: none;
 
   border-color: var(--green);
@@ -401,4 +403,782 @@ h3 {
     align-items: flex-start;
     flex-direction: column;
   }
+}
+
+
+/* =========================================================
+   D-DAS / ASPIRATION FORM
+========================================================= */
+
+.aspirationForm {
+  margin-top: 32px;
+}
+
+.form select,
+.form textarea {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  font: inherit;
+}
+
+.form textarea {
+  resize: vertical;
+}
+
+.form select:focus,
+.form textarea:focus {
+  outline: none;
+
+  border-color: var(--green);
+
+  box-shadow:
+    0 0 0 3px rgba(20, 90, 60, 0.12);
+}
+
+.formResult {
+  width: min(100%, 500px);
+
+  margin-top: 32px;
+  padding: 28px;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background: var(--surface);
+}
+
+.ticketNumber {
+  display: block;
+
+  margin: 20px 0;
+
+  padding: 16px;
+
+  border-radius: 10px;
+
+  background: rgba(20, 90, 60, 0.08);
+
+  font-size: 20px;
+  letter-spacing: 0.08em;
+}
+
+
+.success {
+  width: min(100%, 500px);
+
+  padding: 12px 14px;
+
+  border-radius: 10px;
+
+  background: rgba(20, 90, 60, 0.1);
+
+  border: 1px solid rgba(20, 90, 60, 0.25);
+
+  color: var(--green);
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.form select,
+.form textarea {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  font: inherit;
+}
+
+.form select:focus,
+.form textarea:focus {
+  outline: none;
+
+  border-color: var(--green);
+
+  box-shadow:
+    0 0 0 3px rgba(20, 90, 60, 0.12);
+}
+
+/* =========================================================
+   PUBLIC PORTAL HERO
+========================================================= */
+
+.hero {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background-image:
+    url("/images/hero/dpm-fipp-hero.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  color: white;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.heroOverlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 38, 30, 0.92),
+      rgba(8, 38, 30, 0.72),
+      rgba(8, 38, 30, 0.35)
+    );
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.heroContent {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1100px, calc(100% - 48px));
+
+  margin: 0 auto;
+
+  padding: 120px 0;
+
+  text-align: left;
+}
+
+
+/* EYEBROW */
+
+.heroEyebrow {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  color:
+    rgba(255, 255, 255, 0.75);
+}
+
+
+/* TITLE */
+
+.heroContent h1 {
+  max-width: 750px;
+
+  margin: 0;
+
+  font-size:
+    clamp(48px, 7vw, 92px);
+
+  font-weight: 800;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.04em;
+}
+
+
+/* DESCRIPTION */
+
+.heroContent p {
+  max-width: 620px;
+
+  margin-top: 28px;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  color:
+    rgba(255, 255, 255, 0.8);
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.heroActions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+  margin-top: 36px;
+}
+
+
+.heroPrimaryButton {
+  padding: 15px 24px;
+
+  border-radius: 10px;
+
+  background: white;
+
+  color: #0c2f26;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.heroPrimaryButton:hover {
+  transform:
+    translateY(-2px);
+}
+
+
+.heroSecondaryButton {
+  padding: 15px 24px;
+
+  border-radius: 10px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.5);
+
+  color: white;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  backdrop-filter:
+    blur(10px);
+
+  transition:
+    background 0.2s ease;
+}
+
+
+.heroSecondaryButton:hover {
+  background:
+    rgba(255, 255, 255, 0.16);
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 85vh;
+
+    background-position: center;
+  }
+
+
+  .heroContent {
+    width: min(
+      100% - 40px,
+      600px
+    );
+
+    padding: 100px 0 70px;
+  }
+
+
+  .heroContent h1 {
+    font-size:
+      clamp(42px, 12vw, 64px);
+  }
+
+
+  .heroContent p {
+    font-size: 16px;
+  }
+
+
+  .heroActions {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+
+  .heroPrimaryButton,
+  .heroSecondaryButton {
+    text-align: center;
+  }
+
+}
+
+/* =========================================================
+   PUBLIC PORTAL
+========================================================= */
+
+.publicHome {
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  color: white;
+
+  background-image:
+    url("/images/hero/dpm-fipp-hero.jpg");
+
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* =========================================================
+   HERO OVERLAY
+========================================================= */
+
+.heroOverlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 35, 29, 0.96) 0%,
+      rgba(8, 35, 29, 0.86) 40%,
+      rgba(8, 35, 29, 0.45) 75%,
+      rgba(8, 35, 29, 0.25) 100%
+    );
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.heroContent {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1180px, calc(100% - 64px));
+
+  margin: 0 auto;
+
+  padding:
+    120px
+    0
+    100px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.heroEyebrow {
+  display: inline-block;
+
+  margin-bottom: 22px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.22em;
+
+  color:
+    rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.heroContent h1 {
+  max-width: 800px;
+
+  margin: 0;
+
+  font-size:
+    clamp(64px, 8vw, 120px);
+
+  font-weight: 800;
+
+  line-height: 0.88;
+
+  letter-spacing:
+    -0.055em;
+}
+
+
+.heroContent h1 span {
+  display: block;
+
+  color:
+    rgba(255, 255, 255, 0.65);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.heroContent p {
+  max-width: 620px;
+
+  margin-top: 32px;
+
+  margin-bottom: 0;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+
+  color:
+    rgba(255, 255, 255, 0.78);
+}
+
+
+/* =========================================================
+   HERO ACTIONS
+========================================================= */
+
+.heroActions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+  margin-top: 40px;
+}
+
+
+/* PRIMARY BUTTON */
+
+.heroPrimaryButton {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+
+  padding:
+    0
+    28px;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #0c2f26;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.heroPrimaryButton:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 12px 30px
+    rgba(0, 0, 0, 0.18);
+}
+
+
+/* SECONDARY BUTTON */
+
+.heroSecondaryButton {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+
+  padding:
+    0
+    28px;
+
+  border-radius: 10px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.35);
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  backdrop-filter:
+    blur(12px);
+
+  color: white;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.heroSecondaryButton:hover {
+  transform:
+    translateY(-3px);
+
+  background:
+    rgba(255, 255, 255, 0.16);
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.heroScroll {
+  position: absolute;
+
+  z-index: 2;
+
+  bottom: 36px;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 11px;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  color:
+    rgba(255, 255, 255, 0.55);
+}
+
+
+.heroScroll span {
+  width: 1px;
+
+  height: 42px;
+
+  background:
+    rgba(255, 255, 255, 0.5);
+}
+
+/* =========================================================
+   PUBLIC CONTENT SECTION
+========================================================= */
+
+.publicContentSection {
+  width: min(1180px, calc(100% - 64px));
+
+  margin: 0 auto;
+
+  padding:
+    110px
+    0
+    120px;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.publicSectionHeader {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-bottom: 42px;
+}
+
+
+.sectionEyebrow {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  color: #6b7280;
+}
+
+
+.publicSectionHeader h2 {
+  margin: 0;
+
+  font-size:
+    clamp(32px, 4vw, 52px);
+
+  line-height: 1.05;
+
+  letter-spacing: -0.04em;
+
+  color: #111827;
+}
+
+
+/* =========================================================
+   SECTION LINK
+========================================================= */
+
+.sectionLink {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding-bottom: 6px;
+
+  border-bottom:
+    1px solid #111827;
+
+  color: #111827;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.sectionLink:hover {
+  opacity: 0.65;
+
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .heroContent {
+    width:
+      min(100% - 40px, 600px);
+
+    padding-top: 110px;
+    padding-bottom: 100px;
+  }
+
+
+  .heroContent h1 {
+    font-size:
+      clamp(52px, 16vw, 84px);
+  }
+
+
+  .heroContent p {
+    font-size: 16px;
+
+    line-height: 1.7;
+  }
+
+
+  .publicContentSection {
+    width:
+      min(100% - 40px, 1180px);
+
+    padding:
+      72px
+      0
+      90px;
+  }
+
+
+  .publicSectionHeader {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    margin-bottom: 30px;
+  }
+
+
+  .publicSectionHeader h2 {
+    font-size:
+      clamp(30px, 10vw, 44px);
+  }
+
 }

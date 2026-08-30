@@ -4,6 +4,7 @@ export type Action = "read" | "create" | "update" | "submit" | "approve" | "publ
 
 export function can(role: AppRole, action: Action, visibility: Visibility = "internal") {
   if (role === "super_admin") return true;
+  if (role === "chairperson") return true;
   if (role === "viewer") return action === "read" && visibility !== "internal";
   if (role === "secretary") return ["read", "create", "update", "approve", "publish", "archive"].includes(action);
   return ["read", "create", "update", "submit"].includes(action);
@@ -15,4 +16,7 @@ export function adminNavigation(role: AppRole) {
   if (role === "viewer") return ["dashboard", "access/requests"];
   if (role === "super_admin") return [...base, "workflow/approval", "access/requests", "organization/periods", "users", "audit-log"];
   return [...base, "workflow/approval"];
+  if (role === "chairperson") return [...base, "workflow/approval", "access/requests", "organization/periods"];
+  return [...base, "workflow/approval"];
+
 }

@@ -1,4 +1,9 @@
-export type AppRole = "super_admin" | "secretary" | "commission" | "viewer";
+export type AppRole =
+  | "super_admin"
+  | "chairperson"
+  | "secretary"
+  | "commission"
+  | "viewer";
 export type Visibility = "public" | "restricted" | "internal";
 export type WorkflowStatus =
   | "draft"
