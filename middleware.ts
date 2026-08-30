@@ -2,21 +2,17 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function middleware(request: NextRequest) {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
-
-  const loginUrl = request.nextUrl.clone();
-  loginUrl.pathname = "/login";
-  loginUrl.searchParams.set("next", request.nextUrl.pathname);
-
-  // Jika Supabase belum dikonfigurasi, JANGAN izinkan akses admin
-  if (!url || !key) {
-    return NextResponse.redirect(loginUrl);
-  }
-
-  const response = NextResponse.next({
+  let response = NextResponse.next({
     request,
   });
+
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key =
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
+
+  if (!url || !key) {
+    return response;
+  }
 
   const supabase = createServerClient(url, key, {
     cookies: {
@@ -24,9 +20,15 @@ export async function middleware(request: NextRequest) {
         return request.cookies.getAll();
       },
 
-      setAll(cookies) {
-        cookies.forEach(({ name, value, options }) => {
-          response.cookies.set(name, value, options);
+      setAll(cookiesToSet) {
+        cookiesToSet.forEach(({ name, value, options }) => {
+          request.cookies.set(name, value);
+
+          response.cookies.set(
+            name,
+            value,
+            options
+          );
         });
       },
     },
@@ -36,12 +38,22 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // Belum login → masuk ke halaman login
-  if (!user) {
+  if (
+    request.nextUrl.pathname.startsWith("/admin") &&
+    !user
+  ) {
+    const loginUrl = request.nextUrl.clone();
+
+    loginUrl.pathname = "/login";
+
+    loginUrl.searchParams.set(
+      "next",
+      request.nextUrl.pathname
+    );
+
     return NextResponse.redirect(loginUrl);
   }
 
-  // Sudah login → boleh akses admin
   return response;
 }
 
