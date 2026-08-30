@@ -1,3 +1,4 @@
+import "./admin.css";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { adminNavigation } from "@/lib/permissions";

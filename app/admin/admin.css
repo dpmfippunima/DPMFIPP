@@ -1,0 +1,281 @@
+
+/* =========================================================
+   ADMIN LAYOUT
+========================================================= */
+
+.admin {
+  display: grid;
+
+  grid-template-columns: 230px minmax(0, 1fr);
+
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+
+  gap: 28px;
+
+  padding: 34px 24px;
+
+  background: var(--green-dark);
+  color: white;
+}
+
+.sidebar .brand {
+  color: white;
+}
+
+.sidebar .brand small {
+  color: #a8cdbd;
+}
+
+.sidebar > p {
+  margin: 0;
+
+  font-size: 14px;
+
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.sidebar nav a,
+.sidebar > a:last-child {
+  padding: 10px 0;
+
+  font-size: 14px;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  transition:
+    color 0.15s ease,
+    padding-left 0.15s ease;
+}
+
+.sidebar nav a:hover,
+.sidebar > a:last-child:hover {
+  padding-left: 4px;
+
+  color: white;
+}
+
+.sidebar > a:last-child {
+  margin-top: auto;
+}
+
+
+/* =========================================================
+   ADMIN MAIN
+========================================================= */
+
+.adminMain {
+  min-width: 0;
+
+  padding: 44px 30px;
+
+  background: var(--background);
+}
+
+
+/* =========================================================
+   NOTICE
+========================================================= */
+
+.notice {
+  margin-bottom: 24px;
+
+  padding: 14px 16px;
+
+  border: 1px solid var(--warning-border);
+  border-radius: 10px;
+
+  background: var(--warning-bg);
+
+  color: #5f4b17;
+}
+
+
+/* =========================================================
+   GENERIC GRID
+========================================================= */
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card {
+  padding: 22px;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background: var(--surface);
+}
+
+.card h3 {
+  margin-bottom: 14px;
+}
+
+.card p {
+  margin-bottom: 0;
+
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   TAG
+========================================================= */
+
+.tag {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  color: var(--green-light);
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.dashboardGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-top: 24px;
+}
+
+.statCard {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  padding: 22px;
+
+  background: var(--surface);
+}
+
+.statCard h2 {
+  margin: 14px 0 6px;
+
+  font-size: 32px;
+
+  line-height: 1;
+}
+
+.statCard p {
+  margin: 0;
+
+  color: var(--muted);
+}
+
+.dashboardSection {
+  margin-top: 42px;
+}
+
+.dashboardSection > div:first-child {
+  margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .dashboardGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .admin {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    min-height: auto;
+
+    gap: 18px;
+  }
+
+  .sidebar nav {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 4px 16px;
+  }
+
+  .sidebar > a:last-child {
+    margin-top: 0;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .adminMain {
+    padding: 28px 20px;
+  }
+
+  .dashboardGrid,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar nav {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+}
