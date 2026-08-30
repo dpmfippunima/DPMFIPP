@@ -176,7 +176,11 @@ h3 {
 }
 
 .button {
-  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: auto;
 
   padding: 14px 20px;
 
@@ -204,6 +208,11 @@ h3 {
   transform: scale(0.99);
 }
 
+/* Khusus tombol yang berada di dalam form */
+.form .button {
+  width: 100%;
+}
+
 
 /* =========================================================
    ERROR
@@ -223,3 +232,173 @@ h3 {
   font-size: 14px;
 }
 
+
+
+/* =========================================================
+   PUBLIC SITE HEADER
+========================================================= */
+
+.siteHeader {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  background: rgba(243, 241, 236, 0.92);
+
+  border-bottom: 1px solid var(--border);
+
+  backdrop-filter: blur(12px);
+}
+
+.nav {
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.navLinks a {
+  color: var(--text);
+}
+
+.navLinks a:hover {
+  color: var(--green);
+}
+
+
+/* =========================================================
+   PUBLIC HERO
+========================================================= */
+
+.hero {
+  padding: 100px 0 80px;
+}
+
+.hero .shell {
+  max-width: 900px;
+}
+
+.hero h1 {
+  max-width: 760px;
+
+  font-size: clamp(40px, 6vw, 64px);
+  line-height: 1.1;
+
+  margin-bottom: 24px;
+}
+
+.hero p:not(.eyebrow) {
+  max-width: 720px;
+
+  font-size: 18px;
+
+  color: var(--muted);
+
+  margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   BUTTON VARIANTS
+========================================================= */
+
+.button.secondary {
+  width: auto;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px 20px;
+}
+
+
+/* =========================================================
+   PUBLIC SECTION
+========================================================= */
+
+.sectionHead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-bottom: 28px;
+}
+
+.sectionHead h2 {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+  margin-top: 80px;
+
+  padding: 40px 0;
+
+  background: var(--green-dark);
+
+  color: white;
+}
+
+.footer strong {
+  font-size: 18px;
+}
+
+.footer p {
+  margin: 8px 0 0;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 20px 0;
+  }
+
+  .navLinks {
+    flex-wrap: wrap;
+
+    gap: 12px 18px;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero {
+    padding: 70px 0 50px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .sectionHead {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
