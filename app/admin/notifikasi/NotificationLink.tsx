@@ -41,7 +41,6 @@ export default function NotificationLink({
       if (!result.success) {
         console.error(
           "Notification update failed:",
-          result.message
         );
       }
 
