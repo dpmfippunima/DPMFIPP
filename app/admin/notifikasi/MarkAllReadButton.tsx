@@ -1,13 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
-import { markAllNotificationsAsRead } from "./actions";
+type MarkAllReadButtonProps = {
+  action: () => Promise<
+    | {
+        success: false;
+        error: string;
+      }
+    | {
+        success: true;
+        updatedCount: number;
+      }
+  >;
+};
 
-export default function MarkAllReadButton() {
-  const router = useRouter();
-
+export default function MarkAllReadButton({
+  action,
+}: MarkAllReadButtonProps) {
   const [isLoading, setIsLoading] = useState(false);
 
   async function handleMarkAllRead() {
@@ -16,26 +26,25 @@ export default function MarkAllReadButton() {
     setIsLoading(true);
 
     try {
-      const result = await markAllNotificationsAsRead();
-
-      console.log(
-        "Mark all notifications result:",
-        result
-      );
+      const result = await action();
 
       if (!result.success) {
         console.error(
           "Failed to mark all notifications as read:",
-          result.message
+          result.error
         );
 
         return;
       }
 
-      router.refresh();
+      console.log(
+        `${result.updatedCount} notification(s) marked as read.`
+      );
+
+      window.location.reload();
     } catch (error) {
       console.error(
-        "Error marking all notifications as read:",
+        "Unexpected error while marking notifications as read:",
         error
       );
     } finally {
@@ -46,9 +55,9 @@ export default function MarkAllReadButton() {
   return (
     <button
       type="button"
-      className="markAllReadButton"
       onClick={handleMarkAllRead}
       disabled={isLoading}
+      className="adminButton adminButtonSecondary"
     >
       {isLoading
         ? "Memproses..."
