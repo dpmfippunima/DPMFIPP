@@ -1,0 +1,1 @@
+export function SiteFooter() { return <footer className="footer"><div className="shell"><strong>DPM FIPP UNIMA</strong><p>Portal digital kelembagaan untuk aspirasi, kajian, transparansi, dan arsip.</p></div></footer>; }

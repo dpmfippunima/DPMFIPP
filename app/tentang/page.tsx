@@ -1,0 +1,3 @@
+import { PublicLayout } from "@/components/public-layout";
+
+export default function AboutPage() { return <PublicLayout><section className="shell section"><p className="eyebrow">Tentang DPM</p><h1>Bekerja untuk representasi mahasiswa.</h1><div className="grid"><article className="card"><h3>Visi</h3><p>Mewujudkan DPM FIPP UNIMA yang aspiratif, transparan, kritis, dan berdampak bagi mahasiswa.</p></article><article className="card"><h3>Fungsi</h3><p>Legislasi, aspirasi, pengawasan, pengkajian, transparansi, serta pengarsipan kelembagaan.</p></article><article className="card"><h3>Keberlanjutan</h3><p>Data dan operasi dikelola lintas periode melalui sistem, bukan perubahan source code.</p></article></div></section></PublicLayout>; }
