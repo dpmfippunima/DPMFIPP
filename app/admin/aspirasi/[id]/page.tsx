@@ -320,11 +320,11 @@ const getTimelineState = (stepIndex: number) => {
       </span>
 
       <h3>
-        {aspiration.assigned_organization.name}
+        {aspiration.assigned_organization?.[0]?.name}
       </h3>
 
       <p>
-        {aspiration.assigned_organization.code}
+        {aspiration.assigned_organization?.[0]?.code}
       </p>
     </article>
   </section>
